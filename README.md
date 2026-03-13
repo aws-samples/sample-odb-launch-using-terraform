@@ -207,19 +207,20 @@ The EC2 API and AWS CLI support `OdbNetworkArn` / `--odb-network-arn` as a route
 
 The `db_servers` parameter accepts DB Server **IDs** (e.g., `dbs-abcdef1234`), not DB Server **names**. The provider documentation is unclear on this.
 
-- **Tracking**: [hashicorp/terraform-provider-aws#45102](https://github.com/hashicorp/terraform-provider-aws/issues/45102)
+- **Tracking**: [hashicorp/terraform-provider-aws#45102](https://github.com/hashicorp/terraform-provider-aws/issues/45102) — please +1 this issue
 - **Workaround**: This module auto-discovers DB server IDs via `aws_odb_db_servers` data source, so you typically don't need to set this manually.
 
-### `aws_odb_network_peering_connection` missing Peer Network CIDRs
+### `aws_odb_network_peering_connection` missing Peer Network CIDRs and Peer Network Route Table ID
 
-The `aws_odb_network_peering_connection` resource does not yet support the `peer_network_cidrs` argument. In the AWS Console and CLI, you can specify which VPC CIDR ranges are allowed to reach the ODB network (acts as a network-level ACL). This is not yet available in Terraform.
+The `aws_odb_network_peering_connection` resource does not yet support the `peer-network-cidrs` and `peer-network-route-table-ids` argument. In the AWS Console and CLI, you can specify which VPC CIDR ranges are allowed to reach the ODB network (acts as a network-level ACL). This is not yet available in Terraform.
 
-- **Tracking**: [hashicorp/terraform-provider-aws#45141](https://github.com/hashicorp/terraform-provider-aws/issues/45141)
-- **Workaround**: After creating the peering via Terraform, update peer CIDRs using the AWS CLI:
+- **Tracking**: [hashicorp/terraform-provider-aws#45141](https://github.com/hashicorp/terraform-provider-aws/issues/45141) — please +1 this issue
+- **Workaround**: While creating the peering via Terraform, provide peer CIDRs and peer route table ID using the AWS CLI:
   ```bash
-  aws odb update-odb-peering-connection \
+  aws odb create-odb-peering-connection \
     --odb-peering-connection-id odbpcx-xxxx \
     --peer-network-cidrs-to-be-added "10.0.1.0/24,10.0.2.0/24"
+    --peer-network-route-table-ids "rtx-xxxxx"
   ```
 
 ### `aws_odb_cloud_vm_cluster` missing `system_version` argument
