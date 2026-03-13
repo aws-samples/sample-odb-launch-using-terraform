@@ -1,0 +1,67 @@
+# AWS Configuration
+aws_region  = "us-east-1"
+name_prefix = "myapp-odb"
+environment = "production"
+
+# VPC Configuration
+vpc_cidr               = "10.0.0.0/16"
+availability_zones     = ["us-east-1a", "us-east-1b"]
+public_subnet_cidrs    = ["10.0.1.0/24", "10.0.2.0/24"]
+private_subnet_cidrs   = ["10.0.10.0/24", "10.0.11.0/24"]
+
+# ODB Network Configuration
+# Note: For us-east-1, use us-east-1b (use1-az4) or us-east-1c (use1-az6)
+odb_availability_zone    = "us-east-1c"
+odb_client_subnet_cidr   = "192.168.1.0/27"  # Minimum /27 for client subnet
+odb_backup_subnet_cidr   = "192.168.2.0/28"  # Minimum /28 for backup subnet
+odb_network_dns_prefix   = "myapp-odbnet"
+
+# Exadata Infrastructure Configuration
+exadata_availability_zone = "us-east-1c"
+exadata_shape             = "Exadata.X11M"  # Only X11M is supported
+exadata_compute_count     = 2               # 2-32 database servers (760 ECPUs each)
+exadata_storage_count     = 3               # 3-64 storage servers (80 TB each)
+
+# ============================================================================
+# Choose ONE: VM Cluster OR Autonomous VM Cluster (not both)
+# ============================================================================
+
+# Option 1: VM Cluster (for user-managed databases)
+create_vm_cluster                   = true
+create_autonomous_vm_cluster        = false
+
+vm_cluster_cpu_core_count           = 4
+vm_cluster_memory_size_gbs          = 60
+vm_cluster_data_storage_size_tbs    = 2
+vm_cluster_db_node_storage_size_gbs = 120
+vm_cluster_gi_version               = "19.0.0.0"
+vm_cluster_license_model            = "LICENSE_INCLUDED"  # or "BRING_YOUR_OWN_LICENSE"
+vm_cluster_time_zone                = "UTC"
+
+# SSH Keys for VM Cluster Access
+vm_cluster_ssh_public_keys = [
+  # "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC... user@host"
+]
+
+# ============================================================================
+# Option 2: Autonomous VM Cluster (for Autonomous Databases)
+# Uncomment and configure if using Autonomous VM Cluster
+# ============================================================================
+
+# create_vm_cluster                   = false
+# create_autonomous_vm_cluster        = true
+
+# autonomous_total_container_databases      = 2
+# autonomous_cpu_core_count_per_node        = 4
+# autonomous_memory_per_ocpu_in_gbs         = 15
+# autonomous_data_storage_size_in_tbs       = 2
+# autonomous_db_servers                     = []  # List of DB server OCIDs
+# autonomous_license_model                  = "LICENSE_INCLUDED"
+# autonomous_time_zone                      = "UTC"
+
+# Autonomous Maintenance Configuration
+# autonomous_maintenance_preference         = "NO_PREFERENCE"  # or "CUSTOM_PREFERENCE"
+# autonomous_maintenance_days_of_week       = ["MONDAY", "WEDNESDAY"]
+# autonomous_maintenance_hours_of_day       = [2, 3, 4]  # 2 AM to 4 AM
+# autonomous_maintenance_lead_time_weeks    = 2
+
