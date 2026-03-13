@@ -286,9 +286,9 @@ The root-level `.tf` files (`main.tf`, `variables.tf`, `outputs.tf`, `iam.tf`, `
 
 ## Authors
 
-- Sharath Chandra Kampili
-- Javeed Mohammed
-- Nishanth Sidhom
+- [Sharath Chandra Kampili](https://www.linkedin.com/in/kampili/)
+- [Javeed Mohammed](https://www.linkedin.com/in/javeedmohammed86/)
+- [Nishanth Sodum](https://www.linkedin.com/in/nishanthsodum/)
 
 ## License
 
