@@ -79,14 +79,24 @@ Oracle Database@AWS delivers Oracle Exadata infrastructure, managed by OCI, from
 
 | Region | Name | ODB-Supported AZ IDs |
 |--------|------|---------------------|
-| `us-east-1` | US East (N. Virginia) | use1-az4, use1-az6 |
-| `us-east-2` | US East (Ohio) | use2-az1, use2-az2 |
-| `us-west-2` | US West (Oregon) | usw2-az3, usw2-az4 |
-| `ca-central-1` | Canada (Central) | cac1-az1, cac1-az4 |
-| `eu-central-1` | Europe (Frankfurt) | euc1-az1, euc1-az2 |
-| `eu-west-1` | Europe (Ireland) | euw1-az3 |
-| `ap-northeast-1` | Asia Pacific (Tokyo) | apne1-az1, apne1-az4 |
-| `ap-southeast-2` | Asia Pacific (Sydney) | apse2-az2 |
+ | `us-east-1` | US East (N. Virginia) | use1-az4, use1-az6 |                                                                                                                                                                                                                 
+  | `us-east-2` | US East (Ohio) | use2-az1, use2-az2 |                                                                                                                                                                                                                        
+  | `us-west-2` | US West (Oregon) | usw2-az3, usw2-az4 |                                                                                                                                                                                                                      
+  | `ca-central-1` | Canada (Central) | cac1-az1, cac1-az4 |                                                                                                                                                                                                                   
+  | `eu-central-1` | Europe (Frankfurt) | euc1-az1, euc1-az2 |                                                                                                                                                                                                                 
+  | `eu-central-2` | Europe (Zurich) | euc2-az1, euc2-az3 |                                                                                                                                                                                                                    
+  | `eu-south-1` | Europe (Milan) | eus1-az3 |                                                                                                                                                                                                                                 
+  | `eu-west-1` | Europe (Ireland) | euw1-az1, euw1-az3 |                                                                                                                                                                                                                      
+  | `eu-west-2` | Europe (London) | euw2-az1, euw2-az3 |                                                                                                                                                                                                                       
+  | `eu-west-3` | Europe (Paris) | euw3-az2 |                                                                                                                                                                                                                                  
+  | `ap-northeast-1` | Asia Pacific (Tokyo) | apne1-az1, apne1-az4 |                                                                                                                                                                                                           
+  | `ap-northeast-2` | Asia Pacific (Seoul) | apne2-az1, apne2-az2 |                                                                                                                                                                                                           
+  | `ap-northeast-3` | Asia Pacific (Osaka) | apne3-az2 |                                                                                                                                                                                                                      
+  | `ap-south-1` | Asia Pacific (Mumbai) | aps1-az2, aps1-az3 |                                                                                                                                                                                                                
+  | `ap-south-2` | Asia Pacific (Hyderabad) | aps2-az1, aps2-az3 |                                                                                                                                                                                                             
+  | `ap-southeast-1` | Asia Pacific (Singapore) | apse1-az1 |                                                                                                                                                                                                                  
+  | `ap-southeast-2` | Asia Pacific (Sydney) | apse2-az1, apse2-az2 |                                                                                                                                                                                                          
+  | `ap-southeast-4` | Asia Pacific (Melbourne) | apse4-az1 |            
 
 Each scenario includes pre-built `.tfvars` files for all 8 regions.
 
